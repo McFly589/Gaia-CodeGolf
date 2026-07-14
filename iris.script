@@ -1,0 +1,19 @@
+    zn "%SYS"
+    ;disabling password expire for development purposes
+    do ##class(Security.Users).UnExpireUserPasswords("*")
+
+    ; enabling callin for Embedded Python
+    do ##class(Security.Services).Get("%Service_CallIn",.prop)
+    set prop("Enabled")=1
+    set prop("AutheEnabled")=48
+    do ##class(Security.Services).Modify("%Service_CallIn",.prop)
+    
+    ; set EOF mode
+    do ##class(Config.Miscellaneous).Get(.prop)
+    set prop("SetZEOF")=1
+    do ##class(Config.Miscellaneous).Modify(.prop)
+    
+    ; Import code
+    zn "USER"
+    do $System.OBJ.ImportDir("/home/irisowner/dev/src","*.mac","ck")    
+    halt

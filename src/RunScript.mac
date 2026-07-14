@@ -1,0 +1,20 @@
+ROUTINE RunScript
+	#; We will run this routine to do the benchmark
+Run()
+	#; extract files if necessary from .data/in to .data/temp
+
+	#; Start time
+	Set startTime = $ZHOROLOG
+
+	#; Insert the call to your method/rountine that
+	#; - reads the csv files from ./data/in or .data/temp
+	#; - processes data
+	#; - creates output file in .data/out
+
+	s w="/t/*.csv",o="/o/r.csv",c=",",S="]"",""[",X="(n,A,p)s (g,p)=0,l=$p(L,S,n) f x=1:1:$l(l,c){s v=$p(l,c,x) i v'=""NaN"" s:'g i=v,a=v,g=1 s:v>a a=v s:v<i i=v} s:g p=a-i/i*100,A=i_c_a" o o:"WN" u o f{s f=$zse(w),w="" q:f=""  o f f{u f r L#64e3 q:$zeof  i $e(L,1)?1n{x (X,9,.B,.Q),(X,14,.R,.P) s:Q>P P=Q i P>100 u o w $p(L,c,2)_c_B_c_R_c_P,!}} c f} c o
+	
+	#; End time
+	Set endTime = $ZHOROLOG
+	#; Elapsed time in seconds
+	Set elapsed = endTime - startTime
+	Write "Elapsed time: ", elapsed, " seconds", !
