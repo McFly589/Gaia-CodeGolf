@@ -1,4 +1,4 @@
-## Gaia-CodeGolf
+# Gaia-CodeGolf
 
 This is my solution to the contest [Employee Programming Challenge #1] (https://openexchange.intersystems.com/contest/47).
 
@@ -9,7 +9,7 @@ It's not very efficient but it has only 350 characters, good for the Code Golf n
 
 Make sure you have [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) and [Docker desktop](https://www.docker.com/products/docker-desktop) installed.
 
-# Build
+## Build
 
 Create a directory and run the following command from inside it:
 
