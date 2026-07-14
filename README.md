@@ -2,7 +2,7 @@
 
 This is my solution to the contest [Employee Programming Challenge #1] (https://openexchange.intersystems.com/contest/47).
 
-The script has only one line of code (ObjectScript)
+The script has only one line of ObjectScript code.  
 It's not very efficient but it has only 350 characters, good for the Code Golf nomination :-)
 
 ## Prerequisites
