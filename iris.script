@@ -8,9 +8,10 @@
     set prop("AutheEnabled")=48
     do ##class(Security.Services).Modify("%Service_CallIn",.prop)
     
-    ; set EOF mode
+    ; Change SetEOF and FileMode defaults
     do ##class(Config.Miscellaneous).Get(.prop)
     set prop("SetZEOF")=1
+    set prop("FileMode")=1
     do ##class(Config.Miscellaneous).Modify(.prop)
     
     ; Import code
